@@ -1,3 +1,4 @@
+alert(Cypress.env("TEST_RUNID"))
 describe('Page Layout', () => {
 
     const me = this
@@ -25,7 +26,7 @@ describe('Page Layout', () => {
     })
 
     it('Should be able to select Course Type', () => {
-        cy.get('#courseType').select('Automation')
+        cy.get('#courseType').select('Automation').debug()
         // cy.get('#courseType').find('option:selected').should('have-text', 'Automation')
         // .should('equal', 'Automation')
     })

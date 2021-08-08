@@ -49,3 +49,12 @@
         })           
     })
 ```
+* However, if we want to write/use cypress assertions inside the `then` block, we can use `cy.wrap()`
+```javascript
+    cy.get("[data-cy='course-id']").as('courseIdInput');
+    cy.get('@courseIdInput').then(
+        $courseIdInput => {
+            cy.wrap($courseIdInput).should("be.visible")
+        }
+    )
+```
